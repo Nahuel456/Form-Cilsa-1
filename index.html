@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario</title>
+</head>
+
+<body>
+
+    <section id="form">
+        <div id="form-cont">
+            <form action="">
+
+                <h1>FORMULARIO</h1><br><br>
+                
+                <label for="name">Nombre: </label>
+                <input type="text" id="name" name="name">
+                <div class="err" id="err-name"></div>
+                <br><br>
+
+                <label for="lastname">Apellido: </label>
+                <input type="text" name="lastname" id="lastname">
+                <div class="err" id="err-lastname"></div>
+                <br><br>
+
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email">
+                <div class="err" id="err-email"></div>
+                <br><br>
+
+                <label for="date">Fecha de nacimiento: </label>
+                <input type="date" id="date" name="date">
+                <div class="err" id="err-date"></div>
+                <br><br>
+
+                <label for="country">Pais: </label>
+                <select name="country" id="country">
+                    <option value="" selected disabled>Seleccione un país</option>
+                    <option value="AR">Argentina</option>
+                    <option value="BR">Brasil</option>
+                    <option value="CO">Colombia</option>
+                    <option value="CL">Chile</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="US">Estados Unidos</option>
+                </select>
+                <div class="err" id="err-country"></div>
+                <br><br>
+
+                <button class="btn" id="btn-send">Enviar</button><br><br>
+
+            </form>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <button class="btn-contrast" id="btn1">Estilo clásico</button>
+        <button class="btn-contrast" id="btn-hc">Estilo Alto Contraste </button>
+    </footer>
+
+</body>
+
+</html>
