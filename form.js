@@ -1,4 +1,4 @@
-//-------------- VALIDACION -----------
+// ------------ VALIDACION --------------
 document.addEventListener('DOMContentLoaded', function() {
     let btnsnd = document.getElementById('btn-send');
 
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
 
 
 // Modo alto contraste
