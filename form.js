@@ -1,9 +1,8 @@
-// Validacion del form
+//-------------- VALIDACION -----------
 document.addEventListener('DOMContentLoaded', function() {
     let btnsnd = document.getElementById('btn-send');
 
     btnsnd.addEventListener('click', function(event) {
-
         // Prevenir el envío del formulario y la recarga de la página
         event.preventDefault();
 
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('err-date').innerHTML = '';
         document.getElementById('err-country').innerHTML = '';
 
-        let hasErrors = false;
+        let hasErrors = false; //Variable para enviar el form
 
         // Validar el campo de nombre
         if (nombre.value.trim() === '') {
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('err-lastname').innerHTML = "Debes completar el apellido";
             hasErrors = true;
         }
-
 
         // Validar el campo de email
         if (mail.value.trim() === '') {
@@ -62,41 +60,39 @@ document.addEventListener('DOMContentLoaded', function() {
             if (birthDate > today) {
                 document.getElementById('err-date').innerHTML = "La fecha no puede ser futura";
                 hasErrors = true;
-            }
+            } else {
+                // Verificar si la persona es mayor de 18 años
+                const age = today.getFullYear() - birthDate.getFullYear();
+                const month = today.getMonth() - birthDate.getMonth();
+                const day = today.getDate() - birthDate.getDate();
 
-            // Verificar si la persona es mayor de 18 años
-            const age = today.getFullYear() - birthDate.getFullYear();
-            const month = today.getMonth() - birthDate.getMonth();
-            const day = today.getDate() - birthDate.getDate();
-            
-            if (month < 0 || (month === 0 && day < 0)) {
-                age--;
-            }
+                if (month < 0 || (month === 0 && day < 0)) {
+                    age--;
+                }
 
-            if (age < 18) {
-                document.getElementById('err-date').innerHTML = "Debes ser mayor de 18 años";
-                hasErrors = true;
+                if (age < 18) {
+                    document.getElementById('err-date').innerHTML = "Debes ser mayor de 18 años";
+                    hasErrors = true;
+                }
             }
         }
 
-
-        // Validar el campo de país
+        // Validar el campo de pais
         if (pais.value.trim() === '') {
-            document.getElementById('err-country').innerHTML = "Debes elegir un país";
+            document.getElementById('err-country').innerHTML = "Debes elegir un pais";
             hasErrors = true;
         }
 
         // Si no hay errores, se confirma el envío del formulario
         if (!hasErrors) {
             Swal.fire({
-                title: "Perfecto! has sido validado/a",
+                title: "Perfecto!",
                 text: "Muchas gracias ",
                 icon: "success"
-              })};
-    })
-})
-
-
+            });
+        }
+    });
+});
 
 
 
